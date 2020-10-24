@@ -1,0 +1,70 @@
+sigils? 
+unit visibility? If invisible, goes face-down and cannot be attacked
+each turn consists of attack and defend phases
+cards have tags which indicate whether a card can be played during attack or defend phase or both
+during attack phase, both offensive and defensive cards can be played, and attacking is possible
+once a defensive card has been played, and after its effect completes, enter defend phase
+during defend phase, only defensive abilities can be performed, and attacking is not possible
+neutral cards can be played during any phase and don't change it
+
+card draw:
+	- at turn start, draw cards until you have 5. at the end of the turn, discard your hand.
+	- at turn start, draw a card (or 5), discard until you have 5
+
+every time a card in removed from the player's discard pile, their summoned units take damage (does that include normal->death mode switch?)
+
+there are 3(4) unit slots on each player's side
+units can only attack other units within line of sight
+LoS includues one (up to three) units in front of the attacker
+the player loses if they have no units summoned and the enemy unit attacks for non-zero damage
+OR if the enemy units' total attack damage is >= X and they can attack
+attacking units take damage whenever they attack someone?
+if unit's HP drops below 0, it dies immediately. if it drops to 0, the unit enters Dying stage. Dying stage ends when the unit is healed or it dies. During this stage the unit cannot attack, and will die at the end of its owner's turn.
+
+game starts in normal mode:
+	each turn the player starts in attack phase
+	player can see opponent's discard pile, but not draw pile
+	cards are drawn from draw pile and discarded to discard pile
+once draw pile is exhausted, shuffle discard pile and enter death mode
+death mode:
+	each turn the player starts in defend phase (can attacks ever be played?)
+	player can see opponent's draw pile, but not discard pile
+	cards are drawn from discard pile and discarded to draw pile
+
+can only attack an enemies whose attack is lower?
+normal attacks break block and can only do damage to hp if unit has no block (unless damage >= 2*block)
+piercing attacks don't break block, but do full damage to hp if damage > block.
+piercing attacks do double damage if enemy has no block
+siege attacks are twice as effective against block, i.e. x siege damage can remove 2x block
+
+trap release: a visible ability card that can have a number of hidden cards attached to it that activate once a condition is met. if it's destroyed, the attached cards stay hidden, but can't be activated
+	- equip. it lets you place up to 3 face-down cards on top of it that will activate whenever a condition is met as described on the trap release card.
+		- e.g. the equipped unit is attacked / attacks / dies / loses HP
+
+ranged units can attack any unit regardless of position?
+field layout (one side):
+	ABC
+   DEFGH
+ABC are unit slots, DEFGH are utility slots
+utility slots have the same LoS rules as attacking units, e.g. D can only support A, E can support both A and B, and F can support A, B, or C.
+summoning a unit when the field is full removes a random unit to discard pile
+
+card type:
+	- ability, spell (utility tile)
+	- unit (unit tile)
+	- environment (environment tile), only on active at a time
+
+abilities are cards with requirements 
+spells are cards that cost mana (up to 5 mana per turn) to use
+
+card rarities: common, uncommon, rare, epic, legendary
+out of 19 different cards, there will be:
+	1 legendary, 2 epic, 3 rare, 5 uncommon, 8 common
+	
+relics are items that provide passive bonuses during the game, and are picked from the relic pool before the game starts
+	- if you haven't used mana this turn, draw an additional card next turn
+	- if you have no units at the start of your turn, draw an additional card
+	- reduces the mana cost of the first spell card you play each turn by 1
+	- each turn, you can draw up to X additional cards by first discarding X cards
+
+	

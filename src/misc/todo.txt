@@ -1,0 +1,15 @@
+send only the most recent card update (each tick?)
+fix remote discard pile not being updated when updated locally
+clean up Game
+display turn number correctly
+
+rework: whenever a card changes any of its attributes, it updates remote CDB, so instead of sending card updates, both players will check the new cards' state in the remote DB and update their cards accordingly. similar thing could be done by making the server know the state of the game, and then send that entire state to the players who will then use that to update everything.
+
+when something is about to change (e.g. a player is about to play a card), send that info to the server, which then checks if that action is valid, and if so, changes the state, updates the CDB, and notifies the initiating player that state has been updated so they can display that new state, and sends a message to the other player that there was a state change.
+The other player then requests those changes and gets the latest info of the game.
+In addition, share just visuals of the game, not actual card data.
+
+
+Server-exclusive validation (nothing important gets done until the server validates it):
+	Once a player is about to play a card, send that info to the server.
+	Action is pending until server validates it
